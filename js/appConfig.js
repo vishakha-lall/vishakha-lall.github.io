@@ -1,38 +1,48 @@
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
-    	controller: '/js/homeController.js',
-        url: '/home',
+    	url: '/home',
         views: {
-        	'': { templateUrl: '/views/home.html' },
+        	'': { 
+                templateUrl: '/views/home.html',
+                controller: '/js/homeController.js', 
+            },
         }
     })
     .state('about-me', {
-        controller: '/js/aboutMeController.js',
         url: '/about-me',
         views: {
-            '': { templateUrl: '/views/about-me.html' },
+            '': { 
+                templateUrl: '/views/about-me.html',
+                controller: '/js/aboutMeController.js',
+            },
         }
     })
     .state('projects', {
-        controller: '/js/projectsController.js',
         url: '/projects',
         views: {
-            '': { templateUrl: '/views/projects.html' },
+            '': { 
+                templateUrl: '/views/projects.html',
+                controller: '/js/projectsController.js',
+            },
         }
     })
     .state('blog', {
-        controller: '/js/blogController.js',
         url: '/blog',
         views: {
-            '': { templateUrl: '/views/blog.html' },
+            '': { 
+                templateUrl: '/views/blog.html',
+                controller: '/js/blogController.js',
+            },
         }
     })
     .state('contact-me', {
-        controller: '/js/contactMeController.js',
         url: '/contact-me',
         views: {
-            '': { templateUrl: '/views/contact-me.html' },
+            '': { 
+                templateUrl: '/views/contact-me.html',
+                controller: '/js/contactMeController.js',
+            },
         }
     })
     $urlRouterProvider.otherwise('/home');
