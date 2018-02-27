@@ -118,3 +118,6 @@ function show8() {
         x.style.display = "none";
     }
 }
+function blog1open() {
+    window.location.href = "../views/blog/blog1.html";
+}

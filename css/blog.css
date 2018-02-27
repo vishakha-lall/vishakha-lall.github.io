@@ -50,24 +50,27 @@
 .blog-heading{
 	margin-top: 5%;
 	margin-left: 2%;
-	background: url(../image/image-3.jpg);
-	background-repeat: no-repeat;
-    background-size: cover;
     min-height: 200px;
     cursor: pointer;
 }
-.blog-heading:hover{
-	background: url(../image/image-4.jpg);
+.blog-heading>h4{
+	padding-left: 5%;
+	color: 	#155454;
+}
+.blog-heading>h4:hover{
+	font-weight: bold;
+}
+.heading-1{
+	background: url(../image/blog/image-1.jpg);
 	background-repeat: no-repeat;
     background-size: cover;
     min-height: 200px;
 }
-.blog-heading>h3{
-	color: 	#011f4b;
-	cursor: pointer;
-}
-.blog-heading>h3:hover{
-	font-weight: bold;
+.heading-1:hover{
+	background: url(../image/blog/image-2.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
 }
 /*Grid*/
 
@@ -77,4 +80,22 @@
 	margin-left: 0.5%;
 	min-height: 200px;
 	background-color: #76D3D3;
+	padding-left: 2%;
+	padding-top: 2%;
+}
+.blog>h3{
+	color: 	#155454;
+	font-weight: bold;
+}
+.blog>h3:hover{
+	color: #1F7F7F;
+}
+.blog-content{
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 2%;
+	padding-right: 2%;
+	background-color: #77D6D6;
+	color: 	#155454;
+	margin-top: 12%;
 }

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
+    <script type="text/javascript" src="../../js/mainController.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-custom navbar-expand-md fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" onclick="home()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="aboutMe()">About me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="projects()">Projects</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" onclick="blog()">Blog</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" onclick="contactMe()">Contact me</a>
+          </li>
+        </ul>
+      </div> 
+    </nav>
+
+    <div class="container blog-content">
+      <h1>How I developed my own ‘learning’ chatbot in Python from scratch and deployed it on Facebook Messenger!</h1>
+      <br/><br/>
+      <p>
+        As a part of the Learn IT, Girl program, I was required to build a functional project in a language new to me. I have been wanting to learn to code in Python but never really got the motivation to start. Conveniently, I opted to learn Python and work on a chatbot project.<br/>
+        First, I required a purpose that my bot would serve. I decided to use the GoogleMapsAPI with the target to help users with their navigation requirements in real time over text conversation.<br/>
+        I decided to call my bot Christopher, the MapBot.<br/>
+        <br/><h3>Techstack</h3>
+        <br/>
+        The back-end program has been developed using Python 3. I used Anaconda Distribution for Windows to assist me to deploy the bot. For my database requirements, I used mySQL. The Google Maps functionality is achieved by the GoogleMapsAPI and the bot is deployed on Facebook Messenger using FacebookMessengerAPI.<br/>
+        I wanted my chatbot to have engaging text based conversational interface which required me to apply NLP techniques. I used the StanfordCoreNLP library.<br/>
+        I also used a simple Machine Learning classification model to improve the accuracy of the bot which was achieved with the ScikitLearn Python library.<br/>
+        A few other trivial requirements were Python libraries like NumPy and Pandas.<br/>
+        <br/><h3>Core Logic</h3>
+        <br/>
+        The very first development step was to look for similar projects online or some tutorials to guide me through the process. However, as a consequence of the recent peak of inflated expectations of chatbots, I did not find concrete resources. Since I did not want to use any API for the actual bot framework, I was left with no option but to develop the entire architecture.<br/>
+        I started with a toy chatbot called SimpleBot which used mySQL and Python to learn responses from previous sentences using a bag of words by mapping words. However, it did not give reasonable results. The limitations of SimpleBot are the motivation of diving into NLP and ML.<br/>
+        Next, I worked on a classifier model to classify the sentences input by the user into 3 classes — chat, question and statement. The ‘chat’ class holds a set of random sentences, mostly salutations. The ‘question’ class consists of all queries that the user makes to the bot. Finally, the ‘statement’ class contains all statements which the user inputs to train the bot or otherwise. I used a Random Forest Classifier which gave me a good prediction performance of 80%.<br/>
+        StanfordCoreNLP assisted me with grammar parsing of the sentences to obtain and assign parts of speech tags to individual words of the sentence and extract the root word of the sentence. In my bot, I used the root word, subject and verb relation with different combinations to link a statement as the response to a question. The different combination allows the bot to respond to sentences which are paraphrases for each other without explicitly learning the response of each sentence.<br/>
+        The database maintains 4 tables which includes a chat table, a question table, a statement table and a directions table. The chat table stores all the inputs classified as chat, The question table stores all inputs classified as questions and the statement table stores all inputs classified as statements. The directions table maintains a record of all previous requests for directions between places to avoid repetitive requests to the GoogleMapsAPI.<br/>
+        The response to the chat input by a user is a randomly selected entry from the chat table. In case the user input is a question, the bot parses the question to obtain the root word, the subject and the verb. It checks if the question is already in the question table indicating if it has been responded to in the past. If a matching entry is found, the corresponding entry from the statement table is picked as the response. If no entry is found the bot prompts the user to train it and records the response as the corresponding response to the question. In case of a statement input, the bot understands it as general information and adds to the statement table.<br/>
+        <br/><h3>More about the Classifier</h3>
+        <br/>
+        The chatbot not only needs to deconstruct the sentence input by the user using NLP but also determine what kind of sentence it is for better accuracy. I’ve used a supervised learning model with some pre loaded data to extract features and build a Machine Learning model against the training set.<br/>
+        I started with a set of 100 diverse sentences and classified them with the labels ‘C’ for chat, ‘Q’ for question and ‘S’ for statement. The features are extracted from the data to build the required model by extracting the parts-of-speech tags (POS tags) in the form of triples which gives some clear patterns. With this approach I generated some numeric data-features. With each sentence having a unique ID and classifier label (S/Q/C), the classification model can be built. This data is used to train a Random Forest model. It is split into test and training set with 75 sentences in the training set and 25 in the test set, the model is fit and predictions are generated from the test data.<br/>
+        When applied on a different data set of 50 sentences collected from the Python FAQ with, the model reported a fair 80% accuracy.<br/>
+        <br/><h3>Initial Setup</h3>
+        <br/>
+        The project required pre-requisite setup like an API key to work with GoogleMapsAPI, the access token and webhook to work with FacebookMessengerAPI along with general mySQL setup and installing the Python libraries.<br/>
+        StanfordCoreNLP is a Java based library, hence requires Java dependencies as well.<br/>
+        <br/><h3>Challenges and Future</h3>
+        <br/>
+        I am still working on figuring out a way to host the bot on cloud platform to provide uninterrupted service irrespective of my system server. I have looked across several popular cloud platforms like pythonanywhere and heroku. However pythonanywhere does not support the Java dependencies of StanfordCoreNLP and Heroku has compatibility problems with mySQL. This motivates me to to migrate to SpaCy as the NLP framework in the future. Pythonanywhere supports python dependencies like SpaCy, which is made for Python.<br/>
+        I am also looking forward to learn new APIs and deploy the bot on several other platforms.
+    </div>
+
+  </body>
+</html>
