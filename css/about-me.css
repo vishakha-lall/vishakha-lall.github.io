@@ -1,0 +1,19 @@
+/*Navbar style*/
+.navbar-custom{
+	background-color: #e75443;
+}
+.nav-link{
+	color: #FFF !important;
+	cursor: pointer;
+}
+.nav-link:hover{
+	color: #FFF;
+	font-weight: bold;
+}
+.nav-link:focus{
+	background-color: #B23021;
+}
+.active{
+	font-weight: bold;
+}
+/*Navbar style*/

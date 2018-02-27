@@ -1,0 +1,80 @@
+/*Navbar style*/
+.navbar-custom{
+	background-color: #218282;
+}
+.nav-link{
+	color: #FFF !important;
+	cursor: pointer;
+}
+.nav-link:hover{
+	color: #FFF;
+	font-weight: bold;
+}
+.nav-link:focus{
+	background-color: #155454;
+}
+.active{
+	font-weight: bold;
+}
+/*Navbar style*/
+
+/*Cover Image*/
+.cover-image{
+	background: url(../image/image-11.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    cursor: pointer;
+}
+.cover-image:hover{
+	background: url(../image/image-12.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+.cover-image>h1{
+	color: 	#155454;
+	font-weight: bold;
+	cursor: pointer;
+}
+.cover-image>h1:hover{
+	font-size: 50px;
+}
+.cover-image>p{
+	color: #1C7272;
+	font-size: 30px;
+}
+/*Cover Image*/
+
+/*Grid*/
+.blog-heading{
+	margin-top: 5%;
+	margin-left: 2%;
+	background: url(../image/image-3.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
+    cursor: pointer;
+}
+.blog-heading:hover{
+	background: url(../image/image-4.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
+}
+.blog-heading>h3{
+	color: 	#011f4b;
+	cursor: pointer;
+}
+.blog-heading>h3:hover{
+	font-weight: bold;
+}
+/*Grid*/
+
+/*Blog content*/
+.blog{
+	margin-top: 2%;
+	margin-left: 0.5%;
+	min-height: 200px;
+	background-color: #76D3D3;
+}
