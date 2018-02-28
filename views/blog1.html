@@ -2,8 +2,9 @@
 <html lang="en">
   <head>    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
-    <script type="text/javascript" src="../../js/mainController.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/blog.css">
+    <script type="text/javascript" src="../js/mainController.js"></script>
+    <script type="text/javascript" src="../js/blogController.js"></script>
   </head>
 
   <body>
@@ -32,10 +33,17 @@
         </ul>
       </div> 
     </nav>
-
+    <div style="text-align: center;">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <button type="button" class="btn btn-info" onclick="back()">Back</button>
+    </div>
     <div class="container blog-content">
-      <h1>How I developed my own ‘learning’ chatbot in Python from scratch and deployed it on Facebook Messenger!</h1>
-      <br/><br/>
+      <div class="jumbotron">
+        <h1>How I developed my own ‘learning’ chatbot in Python from scratch and deployed it on Facebook Messenger!</h1>
+      </div>
       <p>
         As a part of the Learn IT, Girl program, I was required to build a functional project in a language new to me. I have been wanting to learn to code in Python but never really got the motivation to start. Conveniently, I opted to learn Python and work on a chatbot project.<br/>
         First, I required a purpose that my bot would serve. I decided to use the GoogleMapsAPI with the target to help users with their navigation requirements in real time over text conversation.<br/>
@@ -68,6 +76,9 @@
         I am still working on figuring out a way to host the bot on cloud platform to provide uninterrupted service irrespective of my system server. I have looked across several popular cloud platforms like pythonanywhere and heroku. However pythonanywhere does not support the Java dependencies of StanfordCoreNLP and Heroku has compatibility problems with mySQL. This motivates me to to migrate to SpaCy as the NLP framework in the future. Pythonanywhere supports python dependencies like SpaCy, which is made for Python.<br/>
         I am also looking forward to learn new APIs and deploy the bot on several other platforms.
     </div>
-
+    <div style="text-align: center;">
+      <br/>
+      <button type="button" class="btn btn-info" onclick="back()">Back</button>
+    </div>
   </body>
 </html>

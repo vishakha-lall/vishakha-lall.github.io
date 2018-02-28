@@ -95,7 +95,11 @@
 	padding-bottom: 2%;
 	padding-left: 2%;
 	padding-right: 2%;
-	background-color: #77D6D6;
+	background-color: #9ED3D3;
 	color: 	#155454;
-	margin-top: 12%;
+	margin-top: 5%;
+	font-size: 1.25rem;
+}
+.jumbotron{
+	background-color: #97D7D8;
 }

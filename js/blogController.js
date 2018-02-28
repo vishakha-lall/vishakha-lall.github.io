@@ -119,5 +119,8 @@ function show8() {
     }
 }
 function blog1open() {
-    window.location.href = "../views/blog/blog1.html";
+    window.location.href = "../views/blog1.html";
+}
+function back() {
+    window.location.href = "../views/blog.html";
 }
