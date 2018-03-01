@@ -124,3 +124,6 @@ function blog1open() {
 function back() {
     window.location.href = "../views/blog.html";
 }
+function blog2open() {
+    window.location.href = "../views/Genetic Algorithm.html";
+}
